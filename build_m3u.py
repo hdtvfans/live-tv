@@ -100,7 +100,13 @@ def main():
                 cur = grp
             f.write(f"{name},{url}\n")
 
-    print("已生成 live.m3u 与 live_gbk.txt")
+    # GBK 编码的 m3u（供只认 m3u 又会乱码的电视家版本）
+    with open("live_gbk.m3u", "w", encoding="gbk", errors="ignore") as f:
+        f.write("#EXTM3U\n")
+        for name, grp, url in items:
+            f.write(f'#EXTINF:-1 tvg-name="{name}" group-title="{grp}",{name}\n{url}\n')
+
+    print("已生成 live.m3u / live_gbk.txt / live_gbk.m3u")
 
 
 if __name__ == "__main__":
