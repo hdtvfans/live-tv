@@ -1,0 +1,120 @@
+{
+  "name": "小六定制·国内+境外直播",
+  "sites": [],
+  "lives": [
+    {
+      "group": "直播源·小六定制",
+      "name": "【国内】IPTV-API·Guovin (每日·最全)",
+      "type": 0,
+      "url": "https://gh-proxy.com/raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
+      "playerType": 1,
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/master/output/epg/epg.gz"
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【国内】范明明 IPv4 (含EPG/台标)",
+      "type": 0,
+      "url": "https://gh-proxy.com/raw.githubusercontent.com/fanmingming/live/main/tv/m3u/itv.m3u",
+      "playerType": 1,
+      "epg": "https://live.fanmingming.cn/e.xml"
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【国内】范明明 IPv6",
+      "type": 0,
+      "url": "https://gh-proxy.com/raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
+      "playerType": 1,
+      "epg": "https://live.fanmingming.cn/e.xml"
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【国内】YanG-1989 聚合源",
+      "type": 0,
+      "url": "https://gh-proxy.com/raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u",
+      "playerType": 1,
+      "epg": "https://iptv.yang-1989.xyz/epg.xml.gz"
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【国内】VBSKYCN (每周更新)",
+      "type": 0,
+      "url": "https://live.zhoujie218.top/tv/iptv4.m3u",
+      "playerType": 1,
+      "epg": "http://epg.51zmt.top:8000/e.xml"
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【国内】APTV (Kimentanm)",
+      "type": 0,
+      "url": "https://gh-proxy.com/raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
+      "playerType": 1,
+      "epg": "https://epg.aptv.app/pp.xml.gz"
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【国内】YueChan Live",
+      "type": 0,
+      "url": "https://gh-proxy.com/raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u",
+      "playerType": 1,
+      "epg": ""
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【港澳台】香港",
+      "type": 0,
+      "url": "https://iptv-org.github.io/iptv/countries/hk.m3u",
+      "playerType": 1,
+      "epg": ""
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【港澳台】澳门",
+      "type": 0,
+      "url": "https://iptv-org.github.io/iptv/countries/mo.m3u",
+      "playerType": 1,
+      "epg": ""
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【港澳台】台湾",
+      "type": 0,
+      "url": "https://iptv-org.github.io/iptv/countries/tw.m3u",
+      "playerType": 1,
+      "epg": ""
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【境外】中文频道合集",
+      "type": 0,
+      "url": "https://iptv-org.github.io/iptv/languages/zho.m3u",
+      "playerType": 1,
+      "epg": ""
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【境外】新加坡",
+      "type": 0,
+      "url": "https://iptv-org.github.io/iptv/countries/sg.m3u",
+      "playerType": 1,
+      "epg": ""
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【境外】马来西亚",
+      "type": 0,
+      "url": "https://iptv-org.github.io/iptv/countries/my.m3u",
+      "playerType": 1,
+      "epg": ""
+    },
+    {
+      "group": "直播源·小六定制",
+      "name": "【境外】YueChan 全球源",
+      "type": 0,
+      "url": "https://gh-proxy.com/raw.githubusercontent.com/YueChan/Live/main/Global.m3u",
+      "playerType": 1,
+      "epg": ""
+    }
+  ],
+  "wallpaper": "",
+  "spider": ""
+}
