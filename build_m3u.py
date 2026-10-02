@@ -77,15 +77,27 @@ def parse(text):
     return out
 
 
+MAX_LINES = 6  # 每个频道最多保留的备用线路数（多线路=播放器可自动切换，容错更高）
+
+
 def main():
-    seen = {}
+    chans = {}
     for u in SOURCES:
         print("下载:", u)
         for name, grp, url in parse(fetch(u)):
-            if name and name.lower() not in seen:
-                seen[name.lower()] = (name, grp, url)
-    items = list(seen.values())
-    print("合并去重后频道数:", len(items))
+            if not name:
+                continue
+            key = name.lower()
+            if key not in chans:
+                chans[key] = {"name": name, "grp": grp, "urls": []}
+            e = chans[key]
+            if url not in e["urls"] and len(e["urls"]) < MAX_LINES:
+                e["urls"].append(url)
+    items = []
+    for e in chans.values():
+        for url in e["urls"]:
+            items.append((e["name"], e["grp"], url))
+    print("频道数:", len(chans), "总线路数(含备用):", len(items))
 
     with open("live.m3u", "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
