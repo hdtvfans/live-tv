@@ -2,14 +2,17 @@
 # -*- coding: utf-8 -*-
 """
 每日自动抓取多条直播源 -> 合并（每频道保留多线路）-> 输出：
-  live.m3u       (UTF-8，含 EPG，TVBox / 通用播放器)
-  live_gbk.txt   (GBK 编码，电视家)
-  live_gbk.m3u   (GBK 编码 m3u)
-  epg.xml.gz     (节目单，压缩，供播放器使用)
+  live.m3u        (UTF-8，含 EPG，TVBox / 通用播放器)
+  live_gbk.txt    (GBK 编码，电视家)
+  live_gbk.m3u    (GBK 编码 m3u)
+  epg.xml.gz      (节目单，压缩，供播放器使用)
+  last_update.txt (运行状态，便于查看是否每天正常运行)
 由 GitHub Actions 每日自动运行（见 .github/workflows/update.yml）。
 """
 import re
 import gzip
+import hashlib
+import datetime
 import urllib.request
 
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
@@ -105,7 +108,7 @@ def parse(text):
 
 
 def build_epg():
-    """抓取 EPG 并保存为 epg.xml.gz（存自己仓库，供 gh-proxy 访问）"""
+    """抓取 EPG 并保存为 epg.xml.gz，返回状态描述字符串"""
     for u in EPG_SOURCES:
         print("EPG 源:", u)
         data = fetch_bytes(u)
@@ -127,17 +130,23 @@ def build_epg():
         with open("epg.xml.gz", "wb") as f:
             f.write(gzdata)
         print("  EPG 已保存 epg.xml.gz，压缩体积:", len(gzdata))
-        return
+        return f"成功（来源: {u}，压缩体积 {len(gzdata)} 字节）"
     print("EPG 抓取失败，保留旧的 epg.xml.gz（若有）")
+    return "失败（所有源均不可用，保留旧文件）"
 
 
 def main():
-    build_epg()
+    epg_status = build_epg()
 
     chans = {}
+    ok_src = 0
     for u in SOURCES:
         print("下载:", u)
-        for name, grp, url in parse(fetch(u)):
+        text = fetch(u)
+        parsed = parse(text)
+        if parsed:
+            ok_src += 1
+        for name, grp, url in parsed:
             if not name:
                 continue
             key = name.lower()
@@ -170,7 +179,28 @@ def main():
         for name, grp, url in items:
             f.write(f'#EXTINF:-1 tvg-name="{name}" group-title="{grp}",{name}\n{url}\n')
 
-    print("已生成 live.m3u / live_gbk.txt / live_gbk.m3u / epg.xml.gz")
+    # 运行状态文件（内容含时间戳，每天必变 -> 必定产生提交，方便观察）
+    now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    def fingerprint(fn):
+        try:
+            data = open(fn, "rb").read()
+            return f"{len(data)} 字节, 指纹 {hashlib.md5(data).hexdigest()[:10]}"
+        except FileNotFoundError:
+            return "未生成"
+
+    with open("last_update.txt", "w", encoding="utf-8") as f:
+        f.write(f"最后更新时间: {now}\n")
+        f.write(f"直播源抓取: 成功 {ok_src} / 共 {len(SOURCES)} 个\n")
+        f.write(f"合并后频道数: {len(chans)}\n")
+        f.write(f"总线路数(含备用): {len(items)}\n")
+        f.write(f"EPG 抓取: {epg_status}\n")
+        f.write("\n【文件指纹】（两次对比即可知内容是否变化）\n")
+        f.write(f"live.m3u: {fingerprint('live.m3u')}\n")
+        f.write(f"live_gbk.txt: {fingerprint('live_gbk.txt')}\n")
+        f.write(f"live_gbk.m3u: {fingerprint('live_gbk.m3u')}\n")
+
+    print("已生成 live.m3u / live_gbk.txt / live_gbk.m3u / epg.xml.gz / last_update.txt")
 
 
 if __name__ == "__main__":
