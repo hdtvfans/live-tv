@@ -8,7 +8,7 @@
       "type": 0,
       "url": "https://gh-proxy.com/raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -16,7 +16,7 @@
       "type": 0,
       "url": "https://gh-proxy.com/raw.githubusercontent.com/fanmingming/live/main/tv/m3u/itv.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -24,7 +24,7 @@
       "type": 0,
       "url": "https://gh-proxy.com/raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -32,7 +32,7 @@
       "type": 0,
       "url": "https://gh-proxy.com/raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -40,7 +40,7 @@
       "type": 0,
       "url": "https://live.zhoujie218.top/tv/iptv4.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -48,7 +48,7 @@
       "type": 0,
       "url": "https://gh-proxy.com/raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -56,7 +56,7 @@
       "type": 0,
       "url": "https://gh-proxy.com/raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -64,7 +64,7 @@
       "type": 0,
       "url": "https://iptv-org.github.io/iptv/countries/hk.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -72,7 +72,7 @@
       "type": 0,
       "url": "https://iptv-org.github.io/iptv/countries/mo.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -80,7 +80,7 @@
       "type": 0,
       "url": "https://iptv-org.github.io/iptv/countries/tw.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -88,7 +88,7 @@
       "type": 0,
       "url": "https://iptv-org.github.io/iptv/languages/zho.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -96,7 +96,7 @@
       "type": 0,
       "url": "https://iptv-org.github.io/iptv/countries/sg.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -104,7 +104,7 @@
       "type": 0,
       "url": "https://iptv-org.github.io/iptv/countries/my.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     },
     {
       "group": "直播源·小六定制",
@@ -112,7 +112,7 @@
       "type": 0,
       "url": "https://gh-proxy.com/raw.githubusercontent.com/YueChan/Live/main/Global.m3u",
       "playerType": 1,
-      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml"
+      "epg": "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main/epg.xml.gz"
     }
   ],
   "wallpaper": "",

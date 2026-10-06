@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 每日自动抓取多条直播源 -> 合并（每频道保留多线路）-> 输出：
-  live.m3u      (UTF-8，含 EPG，TVBox / 通用播放器)
-  live_gbk.txt  (GBK 编码，电视家)
-  live_gbk.m3u  (GBK 编码 m3u)
-  epg.xml       (节目单，供播放器使用)
+  live.m3u       (UTF-8，含 EPG，TVBox / 通用播放器)
+  live_gbk.txt   (GBK 编码，电视家)
+  live_gbk.m3u   (GBK 编码 m3u)
+  epg.xml.gz     (节目单，压缩，供播放器使用)
 由 GitHub Actions 每日自动运行（见 .github/workflows/update.yml）。
 """
 import re
@@ -16,7 +16,7 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 # 你自己的仓库地址（EPG 存到自己仓库，再经 gh-proxy 访问）
 REPO_RAW = "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main"
-EPG_URL = REPO_RAW + "/epg.xml"
+EPG_URL = REPO_RAW + "/epg.xml.gz"
 
 # 直播源清单（Actions 在境外，可直接访问 raw 地址）
 SOURCES = [
@@ -36,12 +36,11 @@ SOURCES = [
     "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u",
 ]
 
-# EPG 源（按顺序尝试，Actions 在境外，能访问这些站点）
+# EPG 源：优先 GitHub 同域（Actions 必通），再退到公网
 EPG_SOURCES = [
+    "https://raw.githubusercontent.com/CCSH/IPTV/refs/heads/main/e.xml.gz",
+    "https://raw.githubusercontent.com/plsy1/epg/main/e/seven-days.xml",
     "https://epg.pw/xmltv/epg_CN.xml",
-    "http://epg.51zmt.top:8000/e.xml",
-    "https://live.fanmingming.com/e.xml",
-    "https://gitee.com/taksssss/tv/raw/main/epg/112114.xml.gz",
 ]
 
 BAD = re.compile(r"^(rtp|udp|igmp|rtsp)://", re.I)
@@ -106,7 +105,7 @@ def parse(text):
 
 
 def build_epg():
-    """抓取 EPG 并保存为 epg.xml（存自己仓库，供 gh-proxy 访问）"""
+    """抓取 EPG 并保存为 epg.xml.gz（存自己仓库，供 gh-proxy 访问）"""
     for u in EPG_SOURCES:
         print("EPG 源:", u)
         data = fetch_bytes(u)
@@ -114,19 +113,22 @@ def build_epg():
             continue
         if data[:2] == b"\x1f\x8b":
             try:
-                data = gzip.decompress(data)
+                xml = gzip.decompress(data)
             except Exception as e:
                 print("  gz 解压失败:", e)
                 continue
-        head = data[:8000]
-        if b"<tv" not in head:
+            gzdata = data
+        else:
+            xml = data
+            gzdata = gzip.compress(data, 6)
+        if b"<tv" not in xml[:8000]:
             print("  非 XMLTV，跳过")
             continue
-        with open("epg.xml", "wb") as f:
-            f.write(data)
-        print("  EPG 已保存，大小:", len(data))
+        with open("epg.xml.gz", "wb") as f:
+            f.write(gzdata)
+        print("  EPG 已保存 epg.xml.gz，压缩体积:", len(gzdata))
         return
-    print("EPG 抓取失败，保留旧的 epg.xml（若有）")
+    print("EPG 抓取失败，保留旧的 epg.xml.gz（若有）")
 
 
 def main():
@@ -168,7 +170,7 @@ def main():
         for name, grp, url in items:
             f.write(f'#EXTINF:-1 tvg-name="{name}" group-title="{grp}",{name}\n{url}\n')
 
-    print("已生成 live.m3u / live_gbk.txt / live_gbk.m3u / epg.xml")
+    print("已生成 live.m3u / live_gbk.txt / live_gbk.m3u / epg.xml.gz")
 
 
 if __name__ == "__main__":
