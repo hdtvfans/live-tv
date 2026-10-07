@@ -4653,6 +4653,8 @@ http://110.153.180.106:55555/out_3/index.m3u8
 http://110.153.180.106:55555/out_2/index.m3u8
 #EXTINF:-1 tvg-name="XinjiangTV8" group-title="Undefined",XinjiangTV8
 http://120.70.60.179:9901/tsfile/live/1002_1.m3u8?authid=0&key=txiptv&playlive=1
+#EXTINF:-1 tvg-name="XizangTVChinese" group-title="Undefined",XizangTVChinese
+https://pili-live-hls-zdzz-tv.zzxwcm.cn/zdzz-tv/nqzh.m3u8
 #EXTINF:-1 tvg-name="XizangTVTibetan(720p)[Not24/7]" group-title="Undefined",XizangTVTibetan(720p)[Not24/7]
 http://php.jdshipin.com:8880/xztv.php?id=zy
 #EXTINF:-1 tvg-name="XuzhouEconomicLifeChannel(1080p)" group-title="Business",XuzhouEconomicLifeChannel(1080p)
