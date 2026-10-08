@@ -4497,6 +4497,8 @@ http://125.210.152.18:9090/live/FXZL_750.m3u8
 http://live2.rxip.sc96655.com/live/zxs_4000.m3u8?A=&E=&K=&P=&S=&U=
 #EXTINF:-1 tvg-name="DocumentaryHumanitiesChannel(1080p)" group-title="Undefined",DocumentaryHumanitiesChannel(1080p)
 http://39.135.138.59:18890/PLTV/88888910/224/3221225655/index.m3u8
+#EXTINF:-1 tvg-name="DongguanComprehensiveNewsChannel" group-title="News",DongguanComprehensiveNewsChannel
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name="DragonTVInternational" group-title="General",DragonTVInternational
 https://restream.pdtvhd.com/memfs/0b1b95c9-3543-4af9-9fdb-cf45f1602f17.m3u8
 #EXTINF:-1 tvg-name="DunhuangTV(1080p)" group-title="Undefined",DunhuangTV(1080p)
