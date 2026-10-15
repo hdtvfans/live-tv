@@ -18,7 +18,7 @@ import urllib.request
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 # 你自己的仓库地址（EPG 存到自己仓库，再经 gh-proxy 访问）
-REPO_RAW = "https://gh-proxy.com/https://raw.githubusercontent.com/hdtvfans/live-tv/main"
+REPO_RAW = "https://hdtvfans.github.io/live-tv"
 EPG_URL = REPO_RAW + "/epg.xml.gz"
 
 # 直播源清单（Actions 在境外，可直接访问 raw 地址）
