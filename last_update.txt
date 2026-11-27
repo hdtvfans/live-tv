@@ -1,10 +1,10 @@
-最后更新时间: 2026-11-26 01:37:56 UTC
+最后更新时间: 2026-11-27 01:31:53 UTC
 直播源抓取: 成功 12 / 共 14 个
-合并后频道数: 1146
-总线路数(含备用): 2305
-EPG 抓取: 成功（来源: https://raw.githubusercontent.com/CCSH/IPTV/refs/heads/main/e.xml.gz，压缩体积 681742 字节）
+合并后频道数: 1147
+总线路数(含备用): 2306
+EPG 抓取: 成功（来源: https://raw.githubusercontent.com/CCSH/IPTV/refs/heads/main/e.xml.gz，压缩体积 674016 字节）
 
 【文件指纹】（两次对比即可知内容是否变化）
-live.m3u: 360276 字节, 指纹 0180c6d123
-live_gbk.txt: 201488 字节, 指纹 50fa83190b
-live_gbk.m3u: 326582 字节, 指纹 6cf1b70ea7
+live.m3u: 360414 字节, 指纹 8d8d5f3feb
+live_gbk.txt: 201636 字节, 指纹 96e8240ccf
+live_gbk.m3u: 326764 字节, 指纹 398e1403e5
